@@ -130,7 +130,7 @@ The code isn't all that interesting on its own! But `mark` is most useful in the
 Since we haven't mentioned it already, we can tell PyTest to run a specific named test (or "node") by name, by appending it to our module path with a "::" separator. For example, to run the `test_fake_query` test only:
 
 ```
-pytest -vs 10_mark_test.py::test_fake_query
+pytest -v 10_mark_test.py::test_fake_query
 ```
 
 We only collected (and ran) one test, instead of three...
@@ -138,7 +138,7 @@ We only collected (and ran) one test, instead of three...
 We can also do partial matches on node name, for example, running all tests with "query" in the name, using the `-k` operator:
 
 ```
-pytest -vs -k query
+pytest -v -k query
 ```
 
 This only matches two of our three tests.

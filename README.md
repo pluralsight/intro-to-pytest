@@ -93,3 +93,5 @@ This allows us to do both pre-test and post-test actions, with a minimum of code
  * Our fixtures shouldn't yield more than once. (PyTest enforces this - try adding a second yield and see what happens!)
 
  * If something goes wrong inside our fixture, such that an exception is thrown before we call `yield`, we'll never get to the post-`yield` code! While this is unlikely in a simple fixture, we should use more advanced features if there's a chance our fixture might fail, and we absolutely, positively need our "teardown" code to run...
+
+_(More detailed walkthroughs coming soon...)_

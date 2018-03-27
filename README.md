@@ -17,7 +17,9 @@ pytest
 
 In the repo folder, and see 35 items being collected, and 35 tests passing, in less than a second.
 
-Congratulations! You're ready to get started.
+(PyTest will list module file that it located tests inside of, and then a period for each test that passed, or other symbols for tests that failed, were skipped, etc...)
+
+But if you're seeing all that, then congratulations! You're ready to get started.
 
 The recommended approach is to read each example file, then run it directly with pytest, with the `v` flag (so that each Test Case is listed by name) and the `s` flag, so that we can see the raw output from the Tests, which will help explain how each example is working. (Though we can shorten this to `-vs`.)
 
@@ -65,7 +67,11 @@ pytest -vs 03_simple_fixture_test.py
 ```
 What the heck just happened?
 
-The short answer is "dependency injection", but the longer answer is that, while PyTest is running all of our tests, it's also attempting to "fill in" their arguments using fixtures with matching names. And as we can see in the detailed output, it is essentially running the fixture first, and then our test. But how can we make our fixture more directly useful to our test?
+The short answer is "dependency injection", but the longer answer is that, while PyTest is running all of our tests, it's also attempting to "fill in" their arguments using fixtures with matching names. And as we can see in the detailed output, it is essentially running the fixture first, and then our test.
+
+Another way to express this is that PyTest test case arguments indicate "dependencies" on fixtures. (If you add an argument whose name doesn't correspond to a Fixture, PyTest will get upset - For example, try changing the argument name to `simple_fixtures` on one of the tests.)
+
+But how can we make our fixture more directly useful to our test?
 
 ## 4: Fixture Returns
 
@@ -85,7 +91,7 @@ Here's a more complicated fixture that uses the `yield` keyword - You may be mor
 
 If this seems confusing (or if you aren't familiar with `yield`), don't worry: The important thing to know is that it's a lot like `return`, except for one interesting difference...
 ```
-pytest -vs 05_yield_fixture_test.py 
+pytest -vs 05_yield_fixture_test.py
 ```
 Like last time, our fixture ran before the test case... Up until the point that we called `yield`. Then the test ran... And then, _after_ the test finished, our fixture picked up where it left off, and ran the rest of the code (after the `yield` call).
 
@@ -94,4 +100,79 @@ This allows us to do both pre-test and post-test actions, with a minimum of code
 
  * If something goes wrong inside our fixture, such that an exception is thrown before we call `yield`, we'll never get to the post-`yield` code! While this is unlikely in a simple fixture, we should use more advanced features if there's a chance our fixture might fail, and we absolutely, positively need our "teardown" code to run...
 
+
+## 6: The "request" fixture
+
+
+## 7: Adding "finalizer" callbacks
+
+
+## 8: Testing wtih Paramaters
+
+
+## 9: Parameter-ception!
+
+
+## 10: Using pytest.mark
+
+PyTest includes a "mock" decorator, which can be used to tag tests and other objects for later reference.
+
+Here are some tests with marks already applied:
+
+```
+pytest -vs 10_mark_test.py
+```
+
+We ran three tests... Note that even though we marked `asserty_callable_thing` as if it was a test, PyTest still didn't run it - `mark` data is only processed on callables that PyTest recognizes as tests (and `asserty_callable_thing` doesn't start with "test"!)
+
+The code isn't all that interesting on its own! But `mark` is most useful in the `pytest` runner itself.
+
+Since we haven't mentioned it already, we can tell PyTest to run a specific named test (or "node") by name, by appending it to our module path with a "::" separator. For example, to run the `test_fake_query` test only:
+
+```
+pytest -vs 10_mark_test.py::test_fake_query
+```
+
+We only collected (and ran) one test, instead of three...
+
+We can also do partial matches on node name, for example, running all tests with "query" in the name, using the `-k` operator:
+
+```
+pytest -vs -k query
+```
+
+This only matches two of our three tests.
+
+Or we could use a simple expression to run all tests with "stats" or "join" in their names:
+
+```
+pytest -v -k "stats or join"
+```
+
+Or to run all tests marked with "db":
+
+```
+pytest -v -m db
+```
+
+Or all tests marked with "db", but NOT with "slow":
+
+```
+pytest -v -m "db and not slow"
+```
+
 _(More detailed walkthroughs coming soon...)_
+
+
+## 11: Special marks
+
+## 12: PyTesting with Classes
+
+## 13: Advanced Class usage
+
+## 14: Fixture Scoping
+
+## 15: Mocking with pytest-mock
+
+## 16: Re-Usable mock fixtures
+

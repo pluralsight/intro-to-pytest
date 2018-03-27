@@ -9,9 +9,14 @@ def test_fake_query():
     assert True
 
 
+@pytest.mark.slow
+def test_fake_stats_function():
+    assert True
+
+
 @pytest.mark.db
 @pytest.mark.slow
-def test_fake_expensive_join():
+def test_fake_multi_join_query():
     assert True
 
 
@@ -27,17 +32,17 @@ def asserty_callable_thing():
 """
 Tags can be used to target (or omit) tests in the runner:
 
-# Run all tests in this module (verbosely)
-pytest -v mark_test.py
+# Run all three tests in this module (verbosely)
+pytest -vs 10_mark_test.py
 
-# Run a specific test by Node name:
-pytest -v mark_test.py::test_fake_query
+# Run one specific test by Node name:
+pytest -vs 10_mark_test.py::test_fake_query
 
 # Run all tests with "query" in their names
 pytest -v -k query
 
-# Run all tests with "query" or "join" in their names
-pytest -v -k "query or join"
+# Run all tests with "stats" or "join" in their names
+pytest -v -k "stats or join"
 
 # Run all tests marked with "db"
 pytest -v -m db

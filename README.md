@@ -26,6 +26,9 @@ The recommended approach is to read each example file, then run it directly with
 ## 0: The Empty Test
 
 The first test is pretty boring: It is a module with "test" in the name, containing a callable (in this case, a plain old function) which also has "test" in the name, that doesn't really do anything.
+
+[00_empty_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/00_empty_test.py)
+
 ```
 pytest -vs 00_empty_test.py
 ```
@@ -36,6 +39,9 @@ This is also an example of how PyTest decides what is and is not a test: By defa
 ## 1: A Basic Test
 
 Finally, a proper test that actually asserts something! It's not much, but it's a start.
+
+[01_basic_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/01_basic_test.py)
+
 ```
 pytest -vs 01_basic_test.py
 ```
@@ -46,6 +52,9 @@ For example, try setting `y` to 0 to make this test fail, and run it again - Ins
 ## 2: Special Assertions
 
 Not everything can be expressed as a simple assertion, though, and so PyTest does come with a few extra functions:
+
+[02_special_assertions_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/02_special_assertions_test.py)
+
 ```
 pytest 02_special_assertions_test.py
 ```
@@ -62,6 +71,9 @@ Fixtures are a core part of what makes PyTest really powerful - They fill the sa
 We create our `simple_fixture` simply by defining a function with the `pytest.fixture` decorator - This example just prints some text, but you could imagine it doing something more interesting, like setting up some test data.
 
 Then we make another test, but this time we give it a single argument whose name matches the name of our `simple_fixture`, above.
+
+[03_simple_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/03_simple_fixture_test.py)
+
 ```
 pytest -vs 03_simple_fixture_test.py
 ```
@@ -76,6 +88,9 @@ But how can we make our fixture more directly useful to our test?
 ## 4: Fixture Returns
 
 Beyond simply running some code, a fixture can also return data, just like a regular function...
+
+[04_fixture_returns_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/04_fixture_returns_test.py)
+
 ```
 pytest -vs 03_simple_fixture_test.py
 ```
@@ -90,6 +105,9 @@ This helps take care of "set up" style scenarios, but what about "teardown"?
 Here's a more complicated fixture that uses the `yield` keyword - You may be more accustomed to seeing that used in generator functions, which are more commonly called repeatedly (or "iterated") to deliver their values.
 
 If this seems confusing (or if you aren't familiar with `yield`), don't worry: The important thing to know is that it's a lot like `return`, except for one interesting difference...
+
+[05_yield_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/05_yield_fixture_test.py)
+
 ```
 pytest -vs 05_yield_fixture_test.py
 ```
@@ -103,21 +121,27 @@ This allows us to do both pre-test and post-test actions, with a minimum of code
 
 ## 6: The "request" fixture
 
+[06_request_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/06_request_test.py)
 
 ## 7: Adding "finalizer" callbacks
 
+[07_request_finalizer_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/07_request_finalizer_test.py)
 
 ## 8: Testing wtih Paramaters
 
+[08_params_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/08_params_test.py)
 
 ## 9: Parameter-ception!
 
+[09_params-ception_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/09_params-ception_test.py)
 
 ## 10: Using pytest.mark
 
 PyTest includes a "mock" decorator, which can be used to tag tests and other objects for later reference.
 
 Here are some tests with marks already applied:
+
+[10_mark_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/10_mark_test.py)
 
 ```
 pytest -vs 10_mark_test.py
@@ -166,13 +190,24 @@ _(More detailed walkthroughs coming soon...)_
 
 ## 11: Special marks
 
+[11_special_marks.py](https://github.com/pluralsight/intro-to-pytest/blob/master/11_special_marks.py)
+
 ## 12: PyTesting with Classes
+
+[12_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/12_class_test.py)
 
 ## 13: Advanced Class usage
 
+[13_advanced_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/13_advanced_class_test.py)
+
 ## 14: Fixture Scoping
+
+[14_scoped_and_meta_fixtures_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/14_scoped_and_meta_fixtures_test.py)
 
 ## 15: Mocking with pytest-mock
 
+[15_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/15_mock_test.py)
+
 ## 16: Re-Usable mock fixtures
 
+[16_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/16_re_usable_mock_test.py)

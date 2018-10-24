@@ -4,7 +4,8 @@ from pytest import fixture
 @fixture
 def one_fixture():
     """
-    Beyond just "doing stuff", fixtures can return data
+    Beyond just "doing stuff", fixtures can return data, which PyTest
+    will pass to the test cases that refer to it...
     """
     print "\n(Returning 1 from data_fixture)"
     return 1
@@ -12,7 +13,8 @@ def one_fixture():
 
 def test_with_data_fixture(one_fixture):
     """
-    The fixture "argument" will contain the returned data
+    PyTest finds the fixture whose name matches the argument, calls it, and
+    passes that return value into our test case:
     """
     print "\nRunning test_with_data_fixture: {}".format(one_fixture)
     assert one_fixture == 1

@@ -16,10 +16,10 @@ def coordinates_fixture(request, numbers_fixture):
     """
     coordinate = request.param + str(numbers_fixture)
     yield coordinate
-    # Uncomment for fun 80s board game reference (and fixture filtering)
-    if coordinate == 'b2':
-        print "\n(Don't sink my Battleship!)"
-        skip()
+    # # Uncomment for fun 80s board game reference (and fixture filtering)
+    # if coordinate == 'b2':
+    #     print "\n(Don't sink my Battleship!)"
+    #     skip()
 
 
 def test_advanced_fixtureception(coordinates_fixture):

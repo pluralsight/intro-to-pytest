@@ -8,8 +8,8 @@ def safe_cleanup():
 def risky_function():
     pass
     # # Uncomment to simulate a failure during Fixture setup!
-    raise Exception("Whoops, I guess that risky function didn't work...")
-    print "   (Risky Function: Totally worth it!)"
+    # raise Exception("Whoops, I guess that risky function didn't work...")
+    # print "   (Risky Function: Totally worth it!)"
 
 
 @fixture

@@ -249,7 +249,7 @@ Now the `coordinate_fixture` applies some extra logic about which parameter comb
 
 ## 11: Using pytest.mark
 
-PyTest includes a "mark" decorator, which can be used to tag tests and other objects for later reference, and for a more specific type of parameterization.
+PyTest includes a "mark" decorator, which can be used to tag tests and other objects for later reference (and for a more localized type of parameterization, though we'll get to that later).
 
 Here are some tests with marks already applied:
 
@@ -259,7 +259,7 @@ Here are some tests with marks already applied:
 pytest -vs 11_mark_test.py
 ```
 
-We ran three tests... Note that even though we marked `asserty_callable_thing` as if it was a test, PyTest still didn't run it - `mark` data is only processed on callables that PyTest recognizes as tests (and `asserty_callable_thing`'s name does not start with "test"!)
+We ran three tests... Note that even though we marked `asserty_callable_thing` as if it was a test, PyTest still didn't actually run it - `mark` tags are only processed on callables that PyTest recognizes as tests (and `asserty_callable_thing`'s name does not start with "test"!)
 
 Admittedly, this code isn't all that interesting on its own. But the real value of `mark` is best demonstrated within the `pytest` runner itself:
 
@@ -296,6 +296,10 @@ Or a `-m` expression to target tests marked with "db", but *not* with the "slow"
 ```
 pytest -v -m "db and not slow"
 ```
+
+---
+(More documenation coming soon...)
+---
 
 ## 12: Special marks
 

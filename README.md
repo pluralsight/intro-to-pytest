@@ -27,10 +27,10 @@ The recommended approach is to read each example file, then run it directly with
 
 The first test is pretty boring: It is a module with "test" in the name, containing a callable (in this case, a plain old function) which also has "test" in the name, that doesn't really do anything.
 
-[00_empty_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/00_empty_test.py)
+[00_empty_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/tests/00_empty_test.py)
 
 ```
-pytest -vs 00_empty_test.py
+pytest -vs tests/00_empty_test.py
 ```
 This is about as minimal as a PyTest test can get - It doesn't even assert anything! But since it also doesn't raise any exceptions, it passes. Among other things, this demonstrates that we can use PyTest tests to simply "exercise" our code, even if we don't assert anything specific about the behavior (beyond it not being "broken").
 
@@ -40,10 +40,10 @@ This is also an example of how PyTest decides what is and is not a test: By defa
 
 Finally, a proper test that actually asserts something! It's not much, but it's a start.
 
-[01_basic_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/01_basic_test.py)
+[01_basic_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/01_basic_test.py)
 
 ```
-pytest -vs 01_basic_test.py
+pytest -vs tests/01_basic_test.py
 ```
 Pytest doesn't come with a ton of fancy assertion methods, because it's doing a lot of work behind the scenes to make the humble `assert` operator more informative.
 
@@ -53,7 +53,7 @@ For example, try setting `y` to 0 to make this test fail, and run it again - Ins
 
 Not everything can be expressed as a simple assertion, though, and so PyTest does come with a few extra functions:
 
-[02_special_assertions_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/02_special_assertions_test.py)
+[02_special_assertions_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/02_special_assertions_test.py)
 
 ```
 pytest 02_special_assertions_test.py
@@ -88,10 +88,10 @@ We create our `simple_fixture` simply by defining a function with the `pytest.fi
 
 Then we make another test, but this time we give it a single argument whose name matches the name of our `simple_fixture`, above.
 
-[03_simple_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/03_simple_fixture_test.py)
+[03_simple_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/03_simple_fixture_test.py)
 
 ```
-pytest -vs 03_simple_fixture_test.py
+pytest -vs tests/03_simple_fixture_test.py
 ```
 What the heck just happened?
 
@@ -105,10 +105,10 @@ But how can we make our fixture more directly useful to our test?
 
 Beyond simply running some code, a fixture can also return data, just like a regular function...
 
-[04_fixture_returns_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/04_fixture_returns_test.py)
+[04_fixture_returns_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/04_fixture_returns_test.py)
 
 ```
-pytest -vs 03_simple_fixture_test.py
+pytest -vs tests/03_simple_fixture_test.py
 ```
 The interesting part is that when PyTest runs our test, it not only runs the fixture function first, it also takes the output of our fixture (in this case, the return value of `one_fixture`), and passes it into our test function as the `one_fixture` argument!
 
@@ -122,10 +122,10 @@ Here's a more complicated fixture that uses the `yield` keyword - You may be mor
 
 If this seems confusing (or if you aren't familiar with `yield`), don't worry: The important thing to know is that it's a lot like `return`, except for one interesting difference...
 
-[05_yield_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/05_yield_fixture_test.py)
+[05_yield_fixture_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/05_yield_fixture_test.py)
 
 ```
-pytest -vs 05_yield_fixture_test.py
+pytest -vs tests/05_yield_fixture_test.py
 ```
 
 Like last time, our fixture ran before the test case... Up until the point that we called `yield`. Then the test was run, receiving the "yielded" value as an argument... And then, _after_ the test finished, our fixture picked up where it left off, and ran the rest of the code (after the `yield` call).
@@ -144,10 +144,10 @@ Fixtures are very powerful, not only because PyTest can run them automatically, 
 
 In this example, we write a fixture which leverages the built-in `request` fixture (aka a "Plugin", a standard fixture that is globally available to PyTest tests) to learn more about how it's being called:
 
-[06_request_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/06_request_test.py)
+[06_request_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/06_request_test.py)
 
 ```
-pytest -vs 06_request_test.py
+pytest -vs tests/06_request_test.py
 ```
 
 Among other things, our fixture can tell that it's being invoked at function-level scope (e.g. it is being referenced directly by a test case function), it knows which "node" it's currently running on (in a dependency tree sense: It knows which test case is calling it), and it knows which Module it's being run in, which in this case is the `06_request_test.py` file.
@@ -160,10 +160,10 @@ Sometimes we want to run a "cleanup" function after testing is complete: We cove
 
 We can also use the `request` plugin (a built-in global fixture) to add a "finalizer", another function which is guaranteed to be called after this fixture (and the test(s) that depend on it) are run. Even in the worst case scenario, where our fixture raises an unhandled exception (before the test case gets run):
 
-[07_request_finalizer_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/07_request_finalizer_test.py)
+[07_request_finalizer_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/07_request_finalizer_test.py)
 
 ```
-pytest -vs 07_request_finalizer_test.py
+pytest -vs tests/07_request_finalizer_test.py
 ```
 
 As with our yield example, we can see that our fixture runs first (including a "risky" function call), followed by our test case, and finally our safe_cleanup function. One advantage of this approach is that we can re-use a shared cleanup function, but the big one is that even if our Fixture itself critically fails, our cleanup function still runs!
@@ -172,7 +172,7 @@ To try this out, uncomment line 11 in `07_request_finalizer_test.py` (e.g. the c
 
 That "risky" function didn't work out - it derailed our Fixture, and our test case never even ran! But despite all that, our `safe_cleanup` function still got called, which could be a really important distinction in a real test!
 
-## 8: Testing wtih Parameters
+## 8: Testing with Parameters
 
 When we decorate a callable as a Fixture, we can also give it some additional properties, like parameters, allowing us to do parameterized testing - And the `request` plugin we've covered above will come in handy here as well.
 
@@ -182,10 +182,10 @@ It's possible to simply include those inputs and outputs (a.k.a. parameters) in 
 
 So let's look at a better approach:
 
-[08_params_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/08_params_test.py)
+[08_params_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/08_params_test.py)
 
 ```
-pytest -vs 08_params_test.py
+pytest -vs tests/08_params_test.py
 ```
 
 We only have one test case here, with one fixture, but that fixture included five parameters, "a" through "e". Because our test case depends on a parameterized fixture, PyTest will run it repeatedly, once for each parameter, and it treats each of those as a distinct "test" that can pass or fail independently: We can clearly see how many of those parameters passed or failed, and it even labeled those tests with both the test case name, and the parameter being used.
@@ -204,10 +204,10 @@ Python includes a great set of Iteration Tools that make it easy to generate all
 
 It's a lot easier to demonstrate than explain, so let's start with that: Here's another single test case, which depends on a fixture (which depends on a second fixture): And it's worth noting that both of those fixtures each have their own set of four parameters:
 
-[09_params-ception_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/09_params-ception_test.py)
+[09_params-ception_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/09_params-ception_test.py)
 
 ```
-pytest -vs 09_params-ception_test.py
+pytest -vs tests/09_params-ception_test.py
 ```
 
 How did that turn into 16 tests? The short answer is that we're experiencing the [Cartesian Product](https://en.wikipedia.org/wiki/Cartesian_product) of our fixture parameters.
@@ -226,11 +226,11 @@ But there's an even more elegant way to solve that particular problem, taking ad
 
 Let's try that again, but with our test case depending on only one fixture (which, in turn, depends on a second fixture):
 
-[10_advanced_params-ception_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/10_advanced_params-ception_test.py)
+[10_advanced_params-ception_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/10_advanced_params-ception_test.py)
 
 
 ```
-pytest -vs 10_advanced_params-ception_test.py
+pytest -vs tests/10_advanced_params-ception_test.py
 ```
 
 The end result is... almost identical, even though the approach is different.
@@ -253,10 +253,10 @@ PyTest includes a "mark" decorator, which can be used to tag tests and other obj
 
 Here are some tests with marks already applied:
 
-[11_mark_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/11_mark_test.py)
+[11_mark_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/11_mark_test.py)
 
 ```
-pytest -vs 11_mark_test.py
+pytest -vs tests/11_mark_test.py
 ```
 
 We ran three tests... Note that even though we marked `asserty_callable_thing` as if it was a test, PyTest still didn't actually run it - `mark` tags are only processed on callables that PyTest recognizes as tests (and `asserty_callable_thing`'s name does not start with "test"!)
@@ -305,28 +305,28 @@ pytest -v -m "db and not slow"
 
 ## 12: Special marks
 
-[12_special_marks.py](https://github.com/pluralsight/intro-to-pytest/blob/master/12_special_marks.py)
+[12_special_marks.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/12_special_marks.py)
 
 ## 13: Mark-based "Parametrization"
 
-[13_mark_parametrization.py](https://github.com/pluralsight/intro-to-pytest/blob/master/13_mark_parametrization.py)
+[13_mark_parametrization.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/13_mark_parametrization.py)
 
 ## 14: PyTesting with Classes
 
-[14_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/14_class_test.py)
+[14_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/14_class_test.py)
 
 ## 15: Advanced Class usage
 
-[15_advanced_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/15_advanced_class_test.py)
+[15_advanced_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/15_advanced_class_test.py)
 
 ## 16: Fixture Scoping
 
-[16_scoped_and_meta_fixtures_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/16_scoped_and_meta_fixtures_test.py)
+[16_scoped_and_meta_fixtures_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/16_scoped_and_meta_fixtures_test.py)
 
 ## 17: Mocking with pytest-mock
 
-[17_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/17_mock_test.py)
+[17_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/17_mock_test.py)
 
 ## 18: Re-Usable mock fixtures
 
-[18_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/18_re_usable_mock_test.py)
+[18_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/18_re_usable_mock_test.py)

@@ -108,7 +108,7 @@ Beyond simply running some code, a fixture can also return data, just like a reg
 [tests/04_fixture_returns_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/04_fixture_returns_test.py)
 
 ```
-pytest -vs tests/03_simple_fixture_test.py
+pytest -vs tests/04_fixture_returns_test.py
 ```
 The interesting part is that when PyTest runs our test, it not only runs the fixture function first, it also takes the output of our fixture (in this case, the return value of `one_fixture`), and passes it into our test function as the `one_fixture` argument!
 
@@ -266,7 +266,7 @@ Admittedly, this code isn't all that interesting on its own. But the real value 
 We can tell PyTest to run a specific named test (a.k.a "node") by name, by appending it to our module path with a "::" separator. For example:
 
 ```
-pytest -v 11_mark_test.py::test_fake_query
+pytest -vs tests/11_mark_test.py::test_fake_query
 ```
 
 (PyTest only collected and ran the named `test_fake_query` case, instead of all the available test cases in the file.)
@@ -307,26 +307,56 @@ pytest -v -m "db and not slow"
 
 [tests/12_special_marks.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/12_special_marks.py)
 
+```
+pytest -vs tests/12_special_marks.py
+```
+
+https://docs.pytest.org/en/latest/skipping.html
+
 ## 13: Mark-based "Parametrization"
 
 [tests/13_mark_parametrization.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/13_mark_parametrization.py)
+
+```
+pytest -vs tests/13_mark_parametrization.py
+```
 
 ## 14: PyTesting with Classes
 
 [tests/14_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/14_class_test.py)
 
+```
+pytest -vs tests/14_class_test.py
+```
+
 ## 15: Advanced Class usage
 
 [tests/15_advanced_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/15_advanced_class_test.py)
+
+```
+pytest -vs tests/15_advanced_class_test.py
+```
 
 ## 16: Fixture Scoping
 
 [tests/16_scoped_and_meta_fixtures_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/16_scoped_and_meta_fixtures_test.py)
 
+```
+pytest -vs tests/16_scoped_and_meta_fixtures_test.py
+```
+
 ## 17: Mocking with pytest-mock
 
 [tests/17_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/17_mock_test.py)
 
+```
+pytest -vs tests/17_mock_test.py
+```
+
 ## 18: Re-Usable mock fixtures
 
 [tests/18_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/18_re_usable_mock_test.py)
+
+```
+pytest -vs tests/18_re_usable_mock_test.py
+```

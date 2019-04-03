@@ -9,7 +9,7 @@ def numbers_fixture(request):
     yield request.param
 
 
-@fixture(params=['a', 'b', 'c', 'd'])
+@fixture(params=["a", "b", "c", "d"])
 def coordinates_fixture(request, numbers_fixture):
     """
     Fixtures can invoke each other (producing cartesian products of params)
@@ -17,11 +17,14 @@ def coordinates_fixture(request, numbers_fixture):
     coordinate = request.param + str(numbers_fixture)
     yield coordinate
     # # Uncomment for fun 80s board game reference (and fixture filtering)
-    # if coordinate == 'b2':
-    #     print "\n(Don't sink my Battleship!)"
-    #     skip()
+
+
+#     if coordinate == 'b2':
+#         print "(Don't sink my Battleship!)"
+#         skip()
 
 
 def test_advanced_fixtureception(coordinates_fixture):
-    print "\nRunning test_advanced_fixtureception with \"{}\"".format(
-        coordinates_fixture)
+    print(
+        '\nRunning test_advanced_fixtureception with "{}"'.format(coordinates_fixture)
+    )

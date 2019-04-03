@@ -32,5 +32,6 @@ def test_where_failure_is_mandatory():
     # Requires failed assertions! (returns "xfail" on failure; FAILs on pass!)
     assert True
 
+
 # # Uncomment to skip everything in the module
 # pytest.skip("This whole Module is problematic at best!", allow_module_level=True)

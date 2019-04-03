@@ -15,13 +15,13 @@ Once you've got all the requirements in place, you should be able to simply run
 pytest
 ```
 
-In the repo folder, and see 35 items being collected, and 35 tests passing, in less than a second.
+In the repo folder, and see 106 items being collected, and 106 tests passing, in less than a second.
 
-(PyTest will list module file that it located tests inside of, and then a period for each test that passed, or other symbols for tests that failed, were skipped, etc...)
+(PyTest will list the names of each test module file that it found, and then a period for each test case that passed, or other symbols for tests that failed, were skipped, etc.)
 
 But if you're seeing all that, then congratulations! You're ready to get started.
 
-The recommended approach is to read each example file, then run it directly with pytest, with the `v` flag (so that each Test Case is listed by name) and the `s` flag, so that we can see the raw output from the Tests, which will help explain how each example is working. (Though we can shorten this to `-vs`.)
+The recommended approach is to read each example file, then run it directly with pytest, with the `v` flag (so that each Test Case is listed by name) and the `s` flag, so that we can see the raw output from the Tests, which will help explain how each example is working; PyTest normally captures and hides this output, except for tests that are failing. (In the examples below, we'll shorten these arguements to `-vs`.)
 
 ## 0: The Empty Test
 
@@ -323,10 +323,14 @@ pytest -v -m "db and not slow"
 
 [tests/16_scoped_and_meta_fixtures_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/16_scoped_and_meta_fixtures_test.py)
 
-## 17: Mocking with pytest-mock
+## 17: Marked Meta-Fixtures
 
-[tests/17_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/17_mock_test.py)
+[tests/17_marked_meta_fixtures.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/17_marked_meta_fixtures.py)
 
-## 18: Re-Usable mock fixtures
+## 18: The Mocker Fixture
 
-[tests/18_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/18_re_usable_mock_test.py)
+[tests/18_the_mocker_fixture.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/18_the_mocker_fixture.py)
+
+## 19: Re-Usable mock fixtures
+
+[tests/19_re_usable_mock_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/19_re_usable_mock_test.py)

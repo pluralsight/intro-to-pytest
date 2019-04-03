@@ -17,16 +17,19 @@ def test_fake_stats_function():
 @pytest.mark.db
 @pytest.mark.slow
 def test_fake_multi_join_query():
+    """
+    Test cases can have multiple marks assigned
+    """
     assert True
 
 
 @pytest.mark.db
 def asserty_callable_thing():
     """
-    But tagging a function alone won't turn it into a test
+    PyTest still only runs "tests", not just any callabe with a mark
     """
-    print "This isn't even a test!"
-    assert True
+    print("This isn't even a test! And it fails!")
+    assert False
 
 
 """

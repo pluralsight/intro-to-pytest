@@ -1,30 +1,56 @@
 import time
 from collections import namedtuple
 
-FakeRow = namedtuple('FakeRow', ('id', 'name', 'value'))
+
+class ExpensiveClass(object):
+    """
+    A fake Class that takes a long time to fully initialize
+    """
+
+    def __init__(self):
+        print("(Initializing ExpensiveClass instance...)")
+        time.sleep(0.2)
+        print("(ExpensiveClass instance complete!)")
 
 
-def db_service(query_parameter):
-    print "(Doing crazy database stuff!)"
+FakeRow = namedtuple("FakeRow", ("id", "name", "value"))
 
-    time.sleep(1.5)
 
-    data = [
-        FakeRow(0, "Foo", 19.95),
-        FakeRow(1, "Bar", 1.99),
-        FakeRow(2, "Baz", 9.99),
-    ]
+def db_service(query_parameters):
+    """
+    A fake DB service that takes a remarkably long time to yield results
+    """
+    print("(Doing expensive database stuff!)")
 
-    print "(Ok, done doing crazy database stuff)"
+    time.sleep(5.0)
+
+    data = [FakeRow(0, "Foo", 19.95), FakeRow(1, "Bar", 1.99), FakeRow(2, "Baz", 9.99)]
+
+    print("(Done doing expensive database stuff)")
     return data
 
 
-def count_service(query_parameter):
-    print "Getting a query so we can count the results..."
+def count_service(query_parameters):
+    print("count_service: Performing a query (and counting the results)...")
 
-    data = db_service(query_parameter)
+    data = db_service(query_parameters)
 
     count = len(data)
 
-    print "Found {} result(s)!".format(count)
+    print("Found {} result(s)!".format(count))
     return count
+
+
+DATA_SET_A = {
+    "Foo": "Bar",
+    "Baz": [5, 7, 11],
+    "Qux": {"A": "Boston", "B": "Python", "C": "TDD"},
+}
+
+DATA_SET_B = DATA_SET_A
+
+DATA_SET_C = {
+    "Foo": "Bar",
+    "Baz": [3, 5, 7],
+    "Qux": {"A": "Boston", "B": "Python", "C": "TDD"},
+}

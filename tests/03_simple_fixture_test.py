@@ -1,22 +1,25 @@
-from pytest import fixture
+import pytest
 
 
-@fixture
-def simple_fixture():
+def test_with_local_fixture(local_fixture):
+    """
+    Fixtures can be invoked simply by having a positional arg
+    with the same name as a fixture:
+    """
+    print("Running test_with_local_fixture...")
+    assert True
+
+
+@pytest.fixture
+def local_fixture():
     """
     Fixtures are callables decorated with @fixture
     """
-    print "\n(Doing Setup Stuff!)"
+    print("\n(Doing Local Fixture setup stuff!)")
 
 
-def test_with_simple_fixture(simple_fixture):
+def test_with_global_fixture(global_fixture):
     """
-    They can be invoked simply by having a positional arg with the same name!
+    Fixtures can also be shared across test files (see conftest.py)
     """
-    print "Running test_with_simple_fixture..."
-    assert True
-
-
-def test_also_with_simple_fixture(simple_fixture):
-    print "Running test_also_with_simple_fixture..."
-    assert True
+    print("Running test_with_global_fixture...")

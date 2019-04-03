@@ -3,5 +3,5 @@ __pycache__/
 .pytest_cache/
 .cache/
 .wheelhouses/
-Pipfile
-Pipfile.lock
+.tox/
+.vscode/

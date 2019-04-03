@@ -1,7 +1,6 @@
-from pytest import fixture, skip
+import pytest
 
-
-@fixture(params=[1, 2, 3, 4])
+@pytest.fixture(params=[1, 2, 3, 4])
 def numbers_fixture(request):
     """
     Fixtures can cause tests to be run multiple times (once per parameter)
@@ -9,7 +8,7 @@ def numbers_fixture(request):
     yield request.param
 
 
-@fixture(params=["a", "b", "c", "d"])
+@pytest.fixture(params=["a", "b", "c", "d"])
 def coordinates_fixture(request, numbers_fixture):
     """
     Fixtures can invoke each other (producing cartesian products of params)
@@ -17,11 +16,9 @@ def coordinates_fixture(request, numbers_fixture):
     coordinate = request.param + str(numbers_fixture)
     yield coordinate
     # # Uncomment for fun 80s board game reference (and fixture filtering)
-
-
-#     if coordinate == 'b2':
-#         print "(Don't sink my Battleship!)"
-#         skip()
+    # if coordinate == 'b2':
+    # print "(Don't sink my Battleship!)"
+    # pytest.skip()
 
 
 def test_advanced_fixtureception(coordinates_fixture):

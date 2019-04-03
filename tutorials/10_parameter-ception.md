@@ -1,6 +1,6 @@
-## 9: Parameter-ception!
+## 10: Parameter-ception!
 
-Python includes an amazing set of Iteration Tools, including functions that make it simple to generate all possible combinations and permutations of a set of data - And while the exact distinctions between combinations and a permutations aren't really in the scope of this guide, we're about to see an interesting example of this kind of behavior, using multiple parameterized fixtures.
+Python includes an amazing set of Iteration Tools, including functions that make it simple to generate all possible combinations and permutations of a set of data - We're about to see an interesting example of this kind of behavior, using multiple parameterized fixtures.
 
 It's a lot easier to demonstrate than explain, so let's start with that: Here's another single test case, which depends on two fixtures - And it's worth noting that each of those fixtures each have their own set of parameters:
 
@@ -10,7 +10,7 @@ It's a lot easier to demonstrate than explain, so let's start with that: Here's 
 pytest -vs tests/09_params-ception_test.py
 ```
 
-How did that turn into 16 tests? The short answer is that we're experiencing the [Cartesian Product](https://en.wikipedia.org/wiki/Cartesian_product) of our fixture parameters.
+How did two sets of 4 parameters turn into 16 tests? The short answer is that we're experiencing the [Cartesian Product](https://en.wikipedia.org/wiki/Cartesian_product) of our fixture parameters.
 
 But the less set-theory-intensive answer is that our test case depends on `letters_fixture`, which causes PyTest to produce a test for each letter parameter... And it also depends on `numbers_fixture`, which in turn wants to repeat each test with each of its own number parameters.
 

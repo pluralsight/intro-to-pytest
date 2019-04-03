@@ -28,4 +28,4 @@ This allows us to do both pre-test and post-test actions, with a minimum of code
 
 ### Up Next:
 
-[Yield Fixtures](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/06_yield_fixtures.md)
+[Request Fixtures](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/07_request_fixtures.md)

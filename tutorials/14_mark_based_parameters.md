@@ -12,10 +12,10 @@ pytest -vs tests/13_mark_parametrization.py
 
 ## 16: PyTesting with Classes
 
-[tests/14_class_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/14_class_test.py)
+[tests/14_class_based_test.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/14_class_based_test.py)
 
 ```
-pytest -vs tests/14_class_test.py
+pytest -vs tests/14_class_based_test.py
 ```
 
 ## 17: Advanced Class usage

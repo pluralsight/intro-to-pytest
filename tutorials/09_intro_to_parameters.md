@@ -24,6 +24,8 @@ And so our single test case is called five times, once for each parameter value,
 
 It doesn't have to be this direct - Our fixture might use the parameter to customize an object, then yield that object to our test. (Or even yield a tuple of values that are derived from the parameter).
 
+(There is also a second parameterized fixture, `mode`, which uses a second keyword argument, `ids`, which allows the names of each parameter label to be overridden. For example, the parameters we need are 1, 2, and 3, but we would prefer to see them labeled as "foo", "bar", and "baz" on the individual tests.)
+
 And this behavior gets really interesting (and powerful) when we consider that fixtures can depend on other fixtures...
 
 ### Up Next:

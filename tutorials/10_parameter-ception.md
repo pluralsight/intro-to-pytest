@@ -26,4 +26,4 @@ But there's an even more elegant way to solve that particular problem, continuin
 
 ### Up Next:
 
-[Advanced Parameter-ception](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/11_advanced_parameter-ception.md)
+[Advanced Parameter-ception!](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/11_advanced_parameter-ception.md)

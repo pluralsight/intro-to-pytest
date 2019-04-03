@@ -28,4 +28,4 @@ And this behavior gets really interesting (and powerful) when we consider that f
 
 ### Up Next:
 
-[Parameter-ception](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/10_parameter-ception.md)
+[Parameter-ception!](https://github.com/pluralsight/intro-to-pytest/blob/master/tutorials/10_parameter-ception.md)

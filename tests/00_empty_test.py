@@ -11,7 +11,7 @@ def test_empty():
 
 def empty_test():
     """
-    My name doesn't start with "test", so I won't get run. :-(
+    My name doesn't start with "test", so I won't get run.
     (by default ;-)
     """
     pass

@@ -17,6 +17,7 @@ def letter(request):
     """
     yield request.param
 
+
 @pytest.fixture(params=[1, 2, 3], ids=['foo', 'bar', 'baz'])
 def mode(request):
     """

@@ -1,6 +1,12 @@
-## 14: Mark-based Parameters
+(I am still writing more detailed tutorials for the newer examples, but feel free to check them out anyway:)
 
-(I am still writing more detailed tutorials for the remaining examples, but feel free to check them out anyway:)
+.
+
+.
+
+.
+
+## 14: Mark-based Parameters
 
 [tests/13_mark_parametrization.py](https://github.com/pluralsight/intro-to-pytest/blob/master/tests/13_mark_parametrization.py)
 
@@ -9,6 +15,8 @@ pytest -vs tests/13_mark_parametrization.py
 ```
 
 ## 15: Reviewing Marks
+
+...
 
 ## 16: PyTesting with Classes
 
@@ -27,6 +35,8 @@ pytest -vs tests/15_advanced_class_test.py
 ```
 
 ## 18: Reviewing Class Tests
+
+...
 
 ## 19: Fixture Scoping
 

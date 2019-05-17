@@ -19,14 +19,14 @@
     
     * However, assertions that aren't local (e.g. not located inside your test function) won't be "unpacked" and explained in detail. If your tests call other code that performs assertions, you should make those "external" assertions as clear as possible: Try to limit each assert to one specific check, and provide an error message as a second argument, so that the failure is easier to understand.
 
-        * For example, if you wanted to assert that x is greater than zero, and divisible by 2, consider something like:
+        * For example, if you wanted to assert that x is greater than zero, and divisible by 2, in a function that is called by one of your test cases (but is not inside a python test case function!) consider something like:
 
         ```
         assert (x > 0), "X should be > 0, but is {}".format(x)
         assert not (x % 2), "X should be divisible by 2, but is {}".format(x)
         ```
 
-        (But if possible, do all your assertions inside test cases, so that PyTest can document their failure reasons for you!)
+        (But if possible, do all your assertions inside test cases, so that PyTest can document their failure reasons and context for you!)
 
 * PyTest provides features for "expecting" Exceptions, and matching approximately similar values, similiar to [unittest.TestCase](https://docs.python.org/2/library/unittest.html#basic-example):
 

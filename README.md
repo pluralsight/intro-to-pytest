@@ -29,6 +29,4 @@ Each example test was intended to be self-explanatory, but I have begun adding s
 
 Not all of the examples have an accompanying tutorial (yet), but were written to be self-explanatory, and should at least include basic comments to explain the feature being demonstrated.
 
-If you have any feedback, questions, or PyTest features you'd like to see covered, please let me know on Pluralsight Slack as [@david.sturgis](https://pluralsight.slack.com/team/U036DTQQ1), or via email at [david-sturgis@pluralsight.com](mailto:david-sturgis@pluralsight.com).
-
-Thanks!
+If you have any feedback, questions, or PyTest features you'd like to see covered, please let me know on Pluralsight Slack as [@david.sturgis](https://pluralsight.slack.com/team/U036DTQQ1), or via email at [david-sturgis@pluralsight.com](mailto:david-sturgis@pluralsight.com), or via [GitHub Issues](https://github.com/pluralsight/intro-to-pytest/issues) (or a PR, now that I have PR notifcations turned on!).

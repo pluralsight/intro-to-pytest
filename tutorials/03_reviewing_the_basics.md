@@ -15,7 +15,7 @@
 
 * PyTest uses the basic Python `assert` keyword, but will introspect into your code and "unpack" useful info about why the assertion failed.
 
-    * (If your PyTest case calls other code that makes assertions, they will be honored as well (in the sense that any failed assertion resulting from your test will case the test to be reported as "failed".)
+    * (If your PyTest case calls other code that makes assertions, they will be honored as well (in the sense that any failed assertion resulting from your test will cause the test to be reported as "failed".)
     
     * However, assertions that aren't local (e.g. not located inside your test function) won't be "unpacked" and explained in detail. If your tests call other code that performs assertions, you should make those "external" assertions as clear as possible: Try to limit each assert to one specific check, and provide an error message as a second argument, so that the failure is easier to understand.
 

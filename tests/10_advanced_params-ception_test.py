@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture(params=[1, 2, 3, 4])
 def numbers_fixture(request):
     """

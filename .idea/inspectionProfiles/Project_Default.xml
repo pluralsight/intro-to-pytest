@@ -1,0 +1,101 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyArgumentListInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <value>
+          <list size="86">
+            <item index="0" class="java.lang.String" itemvalue="psycopg2" />
+            <item index="1" class="java.lang.String" itemvalue="decorator" />
+            <item index="2" class="java.lang.String" itemvalue="six" />
+            <item index="3" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="4" class="java.lang.String" itemvalue="Flask-WTF" />
+            <item index="5" class="java.lang.String" itemvalue="SQLAlchemy" />
+            <item index="6" class="java.lang.String" itemvalue="wsgiref" />
+            <item index="7" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="8" class="java.lang.String" itemvalue="geocoder" />
+            <item index="9" class="java.lang.String" itemvalue="requests" />
+            <item index="10" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="11" class="java.lang.String" itemvalue="Flask-SQLAlchemy" />
+            <item index="12" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="13" class="java.lang.String" itemvalue="click" />
+            <item index="14" class="java.lang.String" itemvalue="ratelim" />
+            <item index="15" class="java.lang.String" itemvalue="WTForms" />
+            <item index="16" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="17" class="java.lang.String" itemvalue="Flask" />
+            <item index="18" class="java.lang.String" itemvalue="pytest" />
+            <item index="19" class="java.lang.String" itemvalue="sauceclient" />
+            <item index="20" class="java.lang.String" itemvalue="pytest-xdist" />
+            <item index="21" class="java.lang.String" itemvalue="Appium-Python-Client" />
+            <item index="22" class="java.lang.String" itemvalue="selenium" />
+            <item index="23" class="java.lang.String" itemvalue="oauth2client" />
+            <item index="24" class="java.lang.String" itemvalue="attribute-service-client" />
+            <item index="25" class="java.lang.String" itemvalue="rsa" />
+            <item index="26" class="java.lang.String" itemvalue="merchant-service-client" />
+            <item index="27" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="28" class="java.lang.String" itemvalue="httplib2" />
+            <item index="29" class="java.lang.String" itemvalue="pyasn1" />
+            <item index="30" class="java.lang.String" itemvalue="pycrypto" />
+            <item index="31" class="java.lang.String" itemvalue="redis" />
+            <item index="32" class="java.lang.String" itemvalue="pyasn1-modules" />
+            <item index="33" class="java.lang.String" itemvalue="python-json-logger" />
+            <item index="34" class="java.lang.String" itemvalue="docutils" />
+            <item index="35" class="java.lang.String" itemvalue="python-jose" />
+            <item index="36" class="java.lang.String" itemvalue="uritemplate" />
+            <item index="37" class="java.lang.String" itemvalue="runbook-service-client" />
+            <item index="38" class="java.lang.String" itemvalue="payment-info-service-client" />
+            <item index="39" class="java.lang.String" itemvalue="botocore" />
+            <item index="40" class="java.lang.String" itemvalue="user-service-client" />
+            <item index="41" class="java.lang.String" itemvalue="mzgeohash" />
+            <item index="42" class="java.lang.String" itemvalue="ecdsa" />
+            <item index="43" class="java.lang.String" itemvalue="upside-core" />
+            <item index="44" class="java.lang.String" itemvalue="futures" />
+            <item index="45" class="java.lang.String" itemvalue="account-service-client" />
+            <item index="46" class="java.lang.String" itemvalue="simplejson" />
+            <item index="47" class="java.lang.String" itemvalue="jmespath" />
+            <item index="48" class="java.lang.String" itemvalue="hiredis" />
+            <item index="49" class="java.lang.String" itemvalue="boto3" />
+            <item index="50" class="java.lang.String" itemvalue="facebook-sdk" />
+            <item index="51" class="java.lang.String" itemvalue="future" />
+            <item index="52" class="java.lang.String" itemvalue="google-api-python-client" />
+            <item index="53" class="java.lang.String" itemvalue="ledger-service-client" />
+            <item index="54" class="java.lang.String" itemvalue="offer-service-client" />
+            <item index="55" class="java.lang.String" itemvalue="nose" />
+            <item index="56" class="java.lang.String" itemvalue="scikit-image" />
+            <item index="57" class="java.lang.String" itemvalue="scipy" />
+            <item index="58" class="java.lang.String" itemvalue="networkx" />
+            <item index="59" class="java.lang.String" itemvalue="py" />
+            <item index="60" class="java.lang.String" itemvalue="numpy" />
+            <item index="61" class="java.lang.String" itemvalue="matplotlib" />
+            <item index="62" class="java.lang.String" itemvalue="imutils" />
+            <item index="63" class="java.lang.String" itemvalue="mock" />
+            <item index="64" class="java.lang.String" itemvalue="pytz" />
+            <item index="65" class="java.lang.String" itemvalue="enum34" />
+            <item index="66" class="java.lang.String" itemvalue="pyparsing" />
+            <item index="67" class="java.lang.String" itemvalue="Pillow" />
+            <item index="68" class="java.lang.String" itemvalue="allure-python-commons" />
+            <item index="69" class="java.lang.String" itemvalue="Django" />
+            <item index="70" class="java.lang.String" itemvalue="pytest-html" />
+            <item index="71" class="java.lang.String" itemvalue="allure-pytest" />
+            <item index="72" class="java.lang.String" itemvalue="funkload-friendly" />
+            <item index="73" class="java.lang.String" itemvalue="django-anymail[mailgun]" />
+            <item index="74" class="java.lang.String" itemvalue="Collectfast" />
+            <item index="75" class="java.lang.String" itemvalue="django-environ" />
+            <item index="76" class="java.lang.String" itemvalue="django-autoslug" />
+            <item index="77" class="java.lang.String" itemvalue="django-crispy-forms" />
+            <item index="78" class="java.lang.String" itemvalue="unidecode" />
+            <item index="79" class="java.lang.String" itemvalue="argon2-cffi" />
+            <item index="80" class="java.lang.String" itemvalue="django-model-utils" />
+            <item index="81" class="java.lang.String" itemvalue="python-slugify" />
+            <item index="82" class="java.lang.String" itemvalue="whitenoise" />
+            <item index="83" class="java.lang.String" itemvalue="django" />
+            <item index="84" class="java.lang.String" itemvalue="django-redis" />
+            <item index="85" class="java.lang.String" itemvalue="django-allauth" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="RobotKeywordNotFound" enabled="false" level="ERROR" enabled_by_default="false" />
+  </profile>
+</component>

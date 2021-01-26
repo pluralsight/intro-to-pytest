@@ -157,9 +157,12 @@ class TestRailUtils:
 
 import sys
 
-def hello(a):
-    print("hello and that's your sum:", a)
+def run_report(report_type):
+    if report_type == 'automation':
+        report = 13
+    t = TestRailUtils()
+    return t.api.reports.run_report(report)
 
 if __name__ == "__main__":
-    a = sys.argv[1]
-    hello(a)
+    report = sys.argv[1]
+    print(run_report(report)['report_url'])

@@ -6,6 +6,10 @@ name: Python package
 on:
   repository_dispatch:
       types: [run-testrail-report]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/3 * * * *'
+
 
 jobs:
   build:
@@ -32,5 +36,5 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
       - run: 'echo TESTRAIL_REPORT_TYPE'
-      - run: python testrail_utils.py $TESTRAIL_REPORT_TYPE
+      - run: python testrail_utils.py ${TESTRAIL_REPORT_TYPE:automation}
 

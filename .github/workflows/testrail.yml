@@ -21,3 +21,6 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
         PLATFORM_TO_RUN_TEST:  ${{ github.event.client_payload.kind }}
+        
+    steps:
+      - run: 'echo $PLATFORM_TO_RUN_TEST'

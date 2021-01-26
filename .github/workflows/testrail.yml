@@ -23,4 +23,10 @@ jobs:
         PLATFORM_TO_RUN_TEST:  ${{ github.event.client_payload.kind }}
         
     steps:
-      - run: 'echo $PLATFORM_TO_RUN_TEST'
+      - uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      - run: python 

@@ -5,7 +5,7 @@ name: Python package
 
 on:
   repository_dispatch:
-      types: [run-test]
+      types: [run-testrail-report]
 
 jobs:
   build:

@@ -20,7 +20,7 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
-        PLATFORM_TO_RUN_TEST:  ${{ github.event.client_payload.kind }}
+        TESTRAIL_REPORT_TYPE:  ${{ github.event.client_payload.kind }}
         
     steps:
       - uses: actions/checkout@v2
@@ -31,6 +31,6 @@ jobs:
           architecture: x64
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
-      - run: 'echo $PLATFORM_TO_RUN_TEST'
-      - run: python testrail_utils.py hello
+      - run: 'echo TESTRAIL_REPORT_TYPE'
+      - run: python testrail_utils.py $TESTRAIL_REPORT_TYPE
 

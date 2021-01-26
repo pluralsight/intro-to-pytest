@@ -125,7 +125,7 @@ class TestRailUtils:
 
 
 # r = ReportManager()
-t = TestRailUtils()
+# t = TestRailUtils()
 # runs = r.get_test_runs()
 # cases = r.get_test_cases()
 # tests = r.get_all_tests()
@@ -153,3 +153,13 @@ t = TestRailUtils()
 
 # t = TestRailUtils()
 # print(t.api.reports.run_report(14))
+
+
+import sys
+
+def hello(a):
+    print("hello and that's your sum:", a)
+
+if __name__ == "__main__":
+    a = sys.argv[1]
+    hello(a)

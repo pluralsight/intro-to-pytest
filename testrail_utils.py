@@ -157,7 +157,7 @@ class TestRailUtils:
 
 import sys
 
-def run_report(report_type):
+def run_report(report_type='automation'):
     global report
     if report_type == 'automation':
         report = 13

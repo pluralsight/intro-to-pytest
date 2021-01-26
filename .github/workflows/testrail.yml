@@ -29,4 +29,4 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: x64
-      - run: python 
+      - run: 'echo $PLATFORM_TO_RUN_TEST'

@@ -20,7 +20,7 @@ jobs:
         
     env:
       PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PLATFORM_TO_RUN_TEST:  ${{ github.event.client_payload.kind }
+      PLATFORM_TO_RUN_TEST:  ${{ github.event.client_payload.kind }}
 
     steps:
     - uses: actions/checkout@v2

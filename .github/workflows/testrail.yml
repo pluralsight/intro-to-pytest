@@ -32,7 +32,6 @@ jobs:
           architecture: x64
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
-      - run: 'echo TESTRAIL_REPORT_TYPE'
       - run: |
             echo "REPORT_URL=$(python testrail_utils.py $TESTRAIL_REPORT_TYPE)" >> $GITHUB_ENV
       - run: 'echo $REPORT_URL'

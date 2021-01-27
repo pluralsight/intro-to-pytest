@@ -5,9 +5,10 @@ name: TestRail report
 
 on:
   repository_dispatch:
+    branches:
+      - test/another
       types: [run-testrail-report]
-  branches:
-    - test/another
+
 
 
 jobs:

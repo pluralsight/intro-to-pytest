@@ -41,6 +41,7 @@ jobs:
         env:
           SLACK_CHANNEL: for_test
           SLACK_COLOR: good
+          SLACK_ICON: https://www.programmableweb.com/sites/default/files/styles/article_profile_150x150/public/resource/icon_gurocktestrail_59.png
           SLACK_MESSAGE: ${{ env.REPORT_URL }}
           SLACK_TITLE: TestRail report
           SLACK_USERNAME: testrail

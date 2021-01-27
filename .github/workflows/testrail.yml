@@ -35,6 +35,7 @@ jobs:
       - run: 'echo TESTRAIL_REPORT_TYPE'
       - run: |
             REPORT_URL=`python testrail_utils.py $TESTRAIL_REPORT_TYPE`
+      - run: 'echo $REPORT_URL'
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:

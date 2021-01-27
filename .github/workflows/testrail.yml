@@ -6,8 +6,8 @@ name: TestRail report
 on:
   repository_dispatch:
       types: [run-testrail-report]
-      branches:
-        - test/another
+  branches:
+    - test/another
 
 
 jobs:

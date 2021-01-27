@@ -43,7 +43,7 @@ jobs:
           SLACK_COLOR: good
           SLACK_ICON: https://pbs.twimg.com/profile_images/1083368648427876353/rDzk-i_U_400x400.jpg
           SLACK_MESSAGE: ${{ env.REPORT_URL }}
-          SLACK_TITLE: TestRail report
+          SLACK_TITLE: TestRail ${{ env.TESTRAIL_REPORT_TYPE }} testing report
           SLACK_USERNAME: testrail
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 

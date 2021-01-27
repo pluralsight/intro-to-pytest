@@ -33,7 +33,8 @@ jobs:
       - name: Install Python dependencies
         uses: py-actions/py-dependency-install@v2
       - run: 'echo TESTRAIL_REPORT_TYPE'
-      - run: REPORT_URL = $(python testrail_utils.py $TESTRAIL_REPORT_TYPE)
+      - run: |
+            echo ::set-env name=REPORT_URL::$(python testrail_utils.py $TESTRAIL_REPORT_TYPE)
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:

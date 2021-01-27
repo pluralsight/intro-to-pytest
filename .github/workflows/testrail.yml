@@ -34,7 +34,7 @@ jobs:
         uses: py-actions/py-dependency-install@v2
       - run: 'echo TESTRAIL_REPORT_TYPE'
       - run: python testrail_utils.py $TESTRAIL_REPORT_TYPE
-       - name: Slack Notification
+      - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_CHANNEL: general

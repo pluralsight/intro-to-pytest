@@ -161,6 +161,10 @@ def run_report(report_type='automation'):
     global report
     if report_type == 'automation':
         report = 13
+    elif report_type == 'manual':
+        report = 14
+    elif report_type == 'all':
+        report = 15
     t = TestRailUtils()
     return t.api.reports.run_report(report)
 

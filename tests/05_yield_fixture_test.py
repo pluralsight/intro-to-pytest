@@ -19,4 +19,4 @@ def yield_fixture():
     yield x
 
     print("\n(Cleaning up yield_fixture)")
-    x = None
+    del(x)

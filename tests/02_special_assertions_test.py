@@ -7,7 +7,6 @@ def test_div_zero_exception():
     """
     with pytest.raises(ZeroDivisionError):
         x = 1 / 0
-        print("1/0 = {}".format(x))
 
 
 def test_keyerror_details():
@@ -18,14 +17,14 @@ def test_keyerror_details():
 
     with pytest.raises(KeyError) as ke:
         baz = my_map["baz"]
-        print("Found Baz: {}".format(baz))
 
-    print("\n(Raised: {})".format(ke))
+    # Our KeyError should reference the missing key, "baz"
+    assert "baz" in str(ke)
 
 
 def test_approximate_matches():
     """
     pytest.approx can be used to assert "approximate" numerical equality
-    (compare UnitTest's "assertAlmostEqual")
+    (compare to "assertAlmostEqual" in unittest.TestCase)
     """
-    assert (0.1 + 0.2) == pytest.approx(0.3)
+    assert 0.1 + 0.2 == pytest.approx(0.3)

@@ -7,7 +7,7 @@ These examples are intended to be self-explanatory to a Python developer, with m
 pip install -r requirements.txt
 ```
 
-In this repo (optionally, inside a virtualenv or other environment wrapper, to keep this from affecting your local Python libraries!)
+In this folder (ideally, inside a virtual environment, to keep this from affecting your local Python libraries).
 
 Once you've got all the requirements in place, you should be able to simply run
 
@@ -15,13 +15,13 @@ Once you've got all the requirements in place, you should be able to simply run
 pytest
 ```
 
-In the repo folder, and see 109 items being collected, and 109 tests passing, in each of the example files, in less than a second.
+In this folder, and see 109 items being collected, and 109 tests passing, in each of the example files, in less than a second.
 
 (PyTest will list the names of each test module file that it found, and then a period for each test case that passed, or other symbols for tests that failed, were skipped, etc.)
 
 But if you're seeing all that, congratulations! You're ready to get started.
 
-The recommended approach is to read each example file, then run it directly with pytest, with the `v` flag (so that each Test Case is listed by name) and the `s` flag, so that we can see the raw output from the Tests, which will help explain how each example is working; PyTest normally captures and hides this output, except for tests that are failing. (In the examples below, we'll shorten these arguements to `-vs`.)
+The recommended approach is to read each example file, then run it directly with pytest, with the `v` flag (so that each Test Case is listed "verbosely", by name) and the `s` flag, so that we can all the standard output (prints) from the Tests, which will help explain how each example is working; PyTest normally captures and hides this output, except for tests that are currently failing. (In the examples below, we'll shorten these arguements to `-vs`.)
 
 Each example test was intended to be self-explanatory, but I have begun adding short tutorial guides to explain more of the context, suggest experiments and hacks you can attempt on th examples, and to provide recaps and reviews for each major section. The tutorial track starts with:
 

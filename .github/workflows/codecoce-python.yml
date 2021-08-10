@@ -1,4 +1,4 @@
-name: CodeCov python
+name: CodeCov Python
 on: [push, pull_request]
 jobs:
   run:

@@ -13,7 +13,7 @@ pytest -vs tests/07_request_finalizer_test.py
 
 As usual, we can see that our fixture runs first (including a "risky" function call), followed by our test case, and finally our safe_cleanup function. One advantage of this approach is that we can re-use a shared cleanup function, but the main benefit is that even if our fixture fails to initialize, our finalizer "cleanup" function still gets run!
 
-To really see the finalizer in action, uncomment line 11 in `07_request_finalizer_test.py` (e.g. the commented-out "raise Exception" call), and re-run the test using the command above.
+To really see the finalizer in action, uncomment line 26 in `07_request_finalizer_test.py` (e.g. the commented-out "raise Exception" call), and re-run the test using the command above.
 
 That "risky" function didn't work out - it derailed our fixture, and our test case never even ran! But despite all that, our `safe_cleanup` function still got called.
 

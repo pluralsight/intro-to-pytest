@@ -15,5 +15,10 @@ jobs:
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
       - run: pip install -r requirements.txt
       - run: pytest
+      - name: Recuperation du rapport
+        uses: actions/upload-artifact@v3
+        with:
+          name: mon-artefact
+          path: /home/runner/work/intro-to-pytest/intro-to-pytest
       
 

@@ -19,6 +19,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: mon-artefact
-          path: /home/runner/work/intro-to-pytest/intro-to-pytest
+          path: ./other_code/**
       
 

@@ -3,9 +3,6 @@ on: push
 jobs:
   tests-app:
     runs-on: ubuntu-latest
-    strategy: 
-      matrix:
-        python-version: ['2.7', '3.7', '3.9']
     steps: 
       - name: Récupération du répository 
         uses: actions/checkout@v3

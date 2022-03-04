@@ -1,2 +1,5 @@
+name:  Deploy app on pull request closed
+on: pull_request
+
 run: echo "test"
 run: echo "787878"

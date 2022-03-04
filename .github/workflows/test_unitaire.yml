@@ -1,7 +1,7 @@
 name: test automatique 
 on: push
 jobs:
-  tests-app:
+  testsapp:
     runs-on: ubuntu-latest
     steps: 
       - name: Récupération du répository 
@@ -21,7 +21,7 @@ jobs:
         with:
           name: reports
           path: ./reports/**
-  Build: 
+  Buildapp: 
     needs: Tests-app
     runs-on: ubuntu-latest
     steps:

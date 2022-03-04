@@ -22,7 +22,7 @@ jobs:
           name: reports
           path: ./reports/**
   Buildapp: 
-    needs: Tests-app
+    needs: Testsapp
     runs-on: ubuntu-latest
     steps:
       - name: Récupération du répo

@@ -1,6 +1,5 @@
 name: test automatique 
-on:
-  push:
+on: push
 jobs:
   tests-app:
     runs-on: ubuntu-latest
@@ -31,8 +30,8 @@ jobs:
     steps:
       - name: Récupération du repo
         uses: actions/checkout@v3
-      - name: Installation de QEMU
-        uses: docker/sutup-qemu-action@v1
+      - name: installation de python 
+        uses: actions/setup-python@v2
       - name: Installation de docker BuildX
         uses: docker/sutup-buildx-action@
       - name: Login au docker hub

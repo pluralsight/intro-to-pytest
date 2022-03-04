@@ -1,10 +1,11 @@
 name: DockerBuild
 
 on: 
-  push:
+  pull_request:
     branches:
-      - dev
-
+      - master
+    types:
+      - closed
 env:
   APP_VERSION: 1.0.0
 
@@ -28,7 +29,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{secrets.USERNAME_DOCKER}}/weather:${{env.APP_VERSION}}
+          tags: ${{secrets.USERNAME_DOCKER}}/pyapp:${{env.APP_VERSION}}
 
       
 

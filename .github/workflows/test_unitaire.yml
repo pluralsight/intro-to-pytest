@@ -21,7 +21,7 @@ jobs:
         with:
           name: reports
           path: ./reports/**
-  Build-app: 
+  Build: 
     needs: Tests-app
     runs-on: ubuntu-latest
     steps:

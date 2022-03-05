@@ -1,0 +1,13 @@
+name: pull_request
+
+on: 
+  pull_request:
+    types: [closed]
+jobs:
+  request_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: récupération pull_request
+        uses: action/checkout@v3
+      - name: pull reponse
+        run: echo "Je fait des test et ensuite le build"

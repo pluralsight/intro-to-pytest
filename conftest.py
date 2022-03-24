@@ -6,7 +6,6 @@ from pytest import fixture
 def global_fixture():
     print("\n(Doing global fixture setup stuff!)")
 
-
 def pytest_configure(config):
     config.addinivalue_line(
         "markers", "db: Example marker for tagging Database related tests"
@@ -14,3 +13,4 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "slow: Example marker for tagging extremely slow tests"
     )
+

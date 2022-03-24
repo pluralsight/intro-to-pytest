@@ -4,19 +4,21 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-        - name: Install Python 3  
-          uses: actions/setup-python@v1
-          with:
-            python-version: 3.6
-        - name: Install dependencies
-          run: |
-            python -m pip install --upgrade pip
-            pip install -e.[dev,example]
-        - name: Build fast-downward
-          run: ./dacbench/envs/rl-plan/fast-downward/build.py
-        - name: Run tests with pytest
-          run: coverage run -m pytest --html=test-report.html
-        - name: First
-          run: pytest -vs tests/00_empty_test.py
-        - name: Create Github Issue
-          uses: dacbd/create-issue-action@v1
+      - name: requirements install
+        run: pip install -r requirements.txt
+      - name: Install Python 3  
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e.[dev,example]
+      - name: Build fast-downward
+        run: ./dacbench/envs/rl-plan/fast-downward/build.py
+      - name: Run tests with pytest
+        run: coverage run -m pytest --html=test-report.html
+      - name: First
+        run: pytest -vs tests/00_empty_test.py
+      - name: Create Github Issue
+        uses: dacbd/create-issue-action@v1

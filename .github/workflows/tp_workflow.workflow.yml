@@ -4,8 +4,6 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
-        - name: First
-          run: pytest -vs tests/00_empty_test.py
         - name: Install Python 3  
           uses: actions/setup-python@v1
           with:
@@ -18,5 +16,7 @@ jobs:
           run: ./dacbench/envs/rl-plan/fast-downward/build.py
         - name: Run tests with pytest
           run: coverage run -m pytest --html=test-report.html
+        - name: First
+          run: pytest -vs tests/00_empty_test.py
         - name: Create Github Issue
           uses: dacbd/create-issue-action@v1

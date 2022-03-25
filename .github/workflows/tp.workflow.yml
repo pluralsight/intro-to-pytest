@@ -1,0 +1,19 @@
+name: tests
+
+on: [push]
+
+
+
+jobs:
+  exec:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '2.x', '3.x', 'pypy-2.7', 'pypy-3.7', 'pypy-3.8' ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installation python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64

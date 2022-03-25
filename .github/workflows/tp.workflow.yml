@@ -1,9 +1,6 @@
 name: tests
 
 on: [push]
-
-
-
 jobs:
   exec:
     runs-on: ubuntu-latest

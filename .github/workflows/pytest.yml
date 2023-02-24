@@ -20,6 +20,7 @@ jobs:
       - name: Install pipenv
         run: |
           python -m pip install --upgrade pipenv wheel
+
       - id: cache-pipenv
         uses: actions/cache@v1
         with:
@@ -30,6 +31,7 @@ jobs:
         if: steps.cache-pipenv.outputs.cache-hit != 'true'
         run: |
           pipenv install --deploy --dev
+
       - name: Run test suite
         run: |
           pipenv run test -v

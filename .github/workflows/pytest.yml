@@ -8,6 +8,12 @@ jobs:
     timeout-minutes: 10
 
     steps:
+      - name: Collect Workflow Telemetry
+        uses: runforesight/foresight-workflow-kit-action@v1
+        if: ${{ always() }}
+        with:
+          api_key: 7552f1c5-36ef-4415-815f-ab542a45a96f
+
       - name: Check out repository code
         uses: actions/checkout@v2
 
@@ -26,3 +32,14 @@ jobs:
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
           command: run test -v
+
+      - name: Analyze Test and/or Coverage Results
+        uses: runforesight/foresight-test-kit-action@v1
+        if: ${{ always() }}
+        with:
+          api_key: 7552f1c5-36ef-4415-815f-ab542a45a96f
+          test_format: JUNIT
+          test_framework: PYTEST
+          test_path: <test_results_path_optional>
+          coverage_format: TXT
+          coverage_path: myproj

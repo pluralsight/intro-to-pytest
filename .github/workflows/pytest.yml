@@ -26,7 +26,7 @@ jobs:
       - name: Install dependencies
         uses: VaultVulp/action-pipenv@v2.0.1
         with:
-          command: install -d
+          command: install -d -r requirements.txt
 
       - name: Test
         uses: VaultVulp/action-pipenv@v2.0.1

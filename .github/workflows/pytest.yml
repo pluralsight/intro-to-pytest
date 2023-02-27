@@ -12,7 +12,7 @@ jobs:
         uses: runforesight/foresight-workflow-kit-action@v1
         if: ${{ always() }}
         with:
-          api_key: 7552f1c5-36ef-4415-815f-ab542a45a96f
+          api_key: ${{ secrets.FORESIGHT_API_KEY }}
 
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -37,7 +37,7 @@ jobs:
         uses: runforesight/foresight-test-kit-action@v1
         if: ${{ always() }}
         with:
-          api_key: 7552f1c5-36ef-4415-815f-ab542a45a96f
+          api_key: ${{ secrets.FORESIGHT_API_KEY }}
           test_format: JUNIT
           test_framework: PYTEST
           test_path: Report.html

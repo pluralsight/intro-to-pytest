@@ -41,3 +41,4 @@ jobs:
           test_format: JUNIT
           test_framework: PYTEST
           coverage_format: JACOCO/XML
+          coverage_path: coverage.xml

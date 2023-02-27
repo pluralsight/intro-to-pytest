@@ -40,5 +40,4 @@ jobs:
           api_key: 7552f1c5-36ef-4415-815f-ab542a45a96f
           test_format: JUNIT
           test_framework: PYTEST
-          coverage_format: XML
-          coverage_path: coverage.xml
+          coverage_format: JACOCO/XML

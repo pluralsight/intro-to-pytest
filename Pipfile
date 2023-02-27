@@ -12,4 +12,4 @@ pytest = "*"
 python_version = "3.9"
 
 [scripts]
-test = "pytest --cov=. --cov-report xml"
+test = "pytest --cov=. --cov-report=xml ."

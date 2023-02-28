@@ -1,4 +1,5 @@
 import pytest
+import random
 
 
 def test_div_zero_exception():
@@ -28,3 +29,6 @@ def test_approximate_matches():
     (compare to "assertAlmostEqual" in unittest.TestCase)
     """
     assert 0.1 + 0.2 == pytest.approx(0.3)
+
+def test_pass_twenty_percent():
+    assert(random.random() < 0.2)

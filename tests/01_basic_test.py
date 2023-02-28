@@ -1,4 +1,5 @@
 from other_code.services import DATA_SET_A, DATA_SET_B, DATA_SET_C
+import random
 
 
 def test_example():
@@ -7,3 +8,6 @@ def test_example():
     """
     print("\nRunning test_example...")
     assert DATA_SET_A == DATA_SET_B
+
+def test_pass_seventy_percent():
+    assert(random.random() < 0.7)

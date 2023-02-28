@@ -1,3 +1,5 @@
+import random
+
 def test_empty():
     """
     PyTest tests are callables whose names start with "test"
@@ -15,3 +17,6 @@ def empty_test():
     (by default ;-)
     """
     pass
+
+def test_pass_fifty_percent():
+    assert(random.random() < 0.5)

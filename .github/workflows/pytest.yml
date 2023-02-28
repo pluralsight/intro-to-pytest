@@ -40,6 +40,6 @@ jobs:
           api_key: ${{ secrets.FORESIGHT_API_KEY }}
           test_format: JUNIT
           test_framework: PYTEST
-          test_path: Report.html
+          test_path: report.xml
           coverage_format: JACOCO/XML
           coverage_path: coverage.xml

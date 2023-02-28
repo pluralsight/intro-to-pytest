@@ -1,6 +1,10 @@
 # .github/workflows/app.yaml
 name: PyTest
-on: push
+on:
+  push:
+  repository_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   test:

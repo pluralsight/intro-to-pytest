@@ -45,3 +45,6 @@ jobs:
           test_path: report.xml
           coverage_format: LCOV/TXT
           coverage_path: coverage.xml
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3

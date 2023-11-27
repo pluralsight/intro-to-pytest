@@ -29,6 +29,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python -m pip install -U ddtrace
     - name: Test
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -37,4 +38,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest --ddtrace
+      env:
+        DD_CIVISIBILITY_ENABLED: true
+        DD_CIVISIBILITY_AGENTLESS_ENABLED: true
+        DD_API_KEY: ${{secrets.API_TOKEN}}
+        DD_SITE: ap1.datadoghq.com
+        DD_ENV: ci
+        DD_SERVICE: pytest
